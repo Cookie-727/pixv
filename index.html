@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mobile-Friendly Template</title>
+    <style>
+        /* Add your custom styles here */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+        }
+        main {
+            padding: 20px;
+            text-align: center;
+        }
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+        .random-link-button {
+            background-color: #4CAF50;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Pixiv Generator Website</h1>
+    </header>
+    <main>
+        <h2>Wassup G</h2>
+        <p>Random generator for pixiv links ⬇️.</p>
+        <button class="random-link-button" onclick="openRandomLink()">Open Random Link</button>
+    </main>
+    <footer>
+        <p>&copy; 2023 Negawat Company. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function openRandomLink() {
+            const links = [
+                'https://www.pixiv.net/en/artworks/106340592#manga',
+                'https://www.pixiv.net/en/artworks/77523730',
+                'https://www.pixiv.net/en/artworks/105677402#manga',
+                'https://www.pixiv.net/en/artworks/106868755#manga',
+                'https://www.pixiv.net/en/artworks/84140717',
+                'https://www.pixiv.net/en/artworks/107617417#manga',
+                'https://www.pixiv.net/en/artworks/96714020',
+                'https://www.pixiv.net/en/artworks/105961169',
+                'https://www.pixiv.net/en/artworks/107199017',
+                'https://www.pixiv.net/en/artworks/107453085#manga',
+                'https://www.pixiv.net/en/artworks/105573455',
+                'https://www.pixiv.net/en/artworks/106869504#manga',
+                'https://www.pixiv.net/en/artworks/101216066',
+                'https://www.pixiv.net/en/artworks/106778394',
+                'https://www.pixiv.net/en/artworks/104373360#manga',
+                'https://www.pixiv.net/en/artworks/107911871#manga',
+                'https://www.pixiv.net/en/artworks/107793790#manga',
+                'https://www.pixiv.net/en/artworks/106586647',
+                'https://www.pixiv.net/en/artworks/109141149',
+                'https://www.pixiv.net/en/artworks/109025529#manga',
+                'https://www.pixiv.net/en/artworks/108137481#manga',
+                'https://www.pixiv.net/en/artworks/105215323#manga',
+                'https://www.pixiv.net/en/artworks/108530908',
+                'https://www.pixiv.net/en/artworks/109190285#manga',
+                'https://www.pixiv.net/en/artworks/109756333',
+                'https://www.pixiv.net/en/artworks/109966235#manga',
+                'https://www.pixiv.net/en/artworks/107901680#manga',
+                'https://www.pixiv.net/en/artworks/109041494',
+                'https://www.pixiv.net/en/artworks/109212313',
+                'https://www.pixiv.net/en/artworks/109879145',
+                'https://www.pixiv.net/en/artworks/110032715',
+                'https://www.pixiv.net/en/artworks/109748825',
+                'https://www.pixiv.net/en/artworks/97899127',
+                'https://www.pixiv.net/en/artworks/108814624'
+                // Add more links as needed
+            ];
+
+            const randomIndex = Math.floor(Math.random() * links.length);
+            const randomLink = links[randomIndex];
+
+            // Open the random link in a new tab/window
+            window.open(randomLink, '_blank');
+        }
+    </script>
+</body>
+</html>
