@@ -38,6 +38,17 @@
             cursor: pointer;
             border-radius: 5px;
         }
+        .slider-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .slider {
+            width: 200px; /* Adjust the width as needed */
+        }
+        .slider-value {
+            margin-left: 10px;
+        }
     </style>
 </head>
 <body>
@@ -47,14 +58,23 @@
     <main>
         <h2>Wassup G</h2>
         <p>Random generator for pixiv links ⬇️.</p>
-        <button class="random-link-button" onclick="openRandomLink()">Open Random Link</button>
+        <div class="slider-container">
+            <input type="range" class="slider" id="linkSlider" min="1" max="10" step="1" value="1" oninput="updateSliderValue()">
+            <span class="slider-value" id="sliderValueDisplay">1</span> <h1>   </h1>
+            <button class="random-link-button" onclick="openRandomLinks()">Open Links</button>
+        </div>
     </main>
     <footer>
         <p>&copy; 2023 Negawat Company. All rights reserved.</p>
     </footer>
 
     <script>
-        function openRandomLink() {
+        function updateSliderValue() {
+            const sliderValue = document.getElementById('linkSlider').value;
+            document.getElementById('sliderValueDisplay').textContent = sliderValue;
+        }
+
+        function openRandomLinks() {
             const links = [
                 'https://www.pixiv.net/en/artworks/106340592#manga',
                 'https://www.pixiv.net/en/artworks/77523730',
@@ -91,14 +111,18 @@
                 'https://www.pixiv.net/en/artworks/97899127',
                 'https://www.pixiv.net/en/artworks/108814624',
                 'https://www.pixiv.net/en/artworks/108444752#manga'
-                // Add more links as needed
             ];
 
-            const randomIndex = Math.floor(Math.random() * links.length);
-            const randomLink = links[randomIndex];
+            const sliderValue = document.getElementById('linkSlider').value;
+            const numLinksToOpen = parseInt(sliderValue);
 
-            // Open the random link in a new tab/window
-            window.open(randomLink, '_blank');
+            if (numLinksToOpen > 0) {
+                for (let i = 0; i < numLinksToOpen; i++) {
+                    const randomIndex = Math.floor(Math.random() * links.length);
+                    const randomLink = links[randomIndex];
+                    window.open(randomLink, '_blank');
+                }
+            }
         }
     </script>
 </body>
